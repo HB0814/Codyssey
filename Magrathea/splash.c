@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int YEAR,MONTH,DAY;
-char NAME[15];
+char NAME[20]="\0";
 
 int VERTICAL_MAX=5;
 
@@ -11,7 +11,7 @@ void Phrase(int word)
     {
         case 0:
         
-        printf("\t\t\t\t[마그라테아 ver 0.1]\t\t\t            ");
+        printf("\t                         [마그라테아 ver 0.1]                            ");
         break;
         case 1:
         printf("\t\"풀 한 포기 없는 황무지에서 반짝이는 행성을 만들내는 곳 마그라테아,       ");
@@ -22,11 +22,11 @@ void Phrase(int word)
 
         break;
         case 3:
-        printf("\t\t\t마그라테아에 오신걸 환영합니다.\"\t\t               ");
+        printf("\t                    마그라테아에 오신걸 환영합니다.\"                        ");
 
         break;
         case 4:
-        printf("\t\t\t\t\t\t\t\t\t                ");
+        printf("\t                                                                             ");
 
         break;
         default:
@@ -38,7 +38,8 @@ void Input()
     printf("현재 날짜를 \"yyyy-mm-dd\" 형식으로 입력하세요:");
     scanf("%d-%d-%d",&YEAR,&MONTH,&DAY);
     printf("[당신의 이름을 입력하세요]:");
-    scanf("%s",&NAME);
+
+    scanf("%s",NAME);
     printf("**입력이 정상적으로 처리되었습니다.**\n");
 }
 void OutPut()
@@ -58,7 +59,6 @@ void OutPut()
     printf("[사용자]:%s\t[실행 시간]:%04d년 %02d월 %02d일\n",NAME,YEAR,MONTH,DAY);
 
 }
-
 void main()
 {
     Input();
