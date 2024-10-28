@@ -9,7 +9,7 @@ int main()
     const char *member_info[11] = {"성명", "생일(YYYY/MM/DD 형식)", "성별(여성이면 F 또는 남성이면 M)", 
                                   "메일 주소", "국적", "BMI", "주 스킬", "보조 스킬", 
                                   "한국어 등급(TOPIK)", "MBTI", "소개"};
-
+    char *candidate_counting[6]={"첫","두","세","넷","다섯","여섯"}
     int candidate_count = 0;
 
     // 데이터 입력
@@ -20,7 +20,7 @@ int main()
     while (candidate_count < 6)
     {
         printf("=================================\n");
-        printf("%d 번째 후보자의 정보를 입력합니다.\n", candidate_count + 1);
+        printf("%d 번째 후보자의 정보를 입력합니다.\n", candidate_counting[candidate_count]);
         printf("---------------------------------\n");
 
         for (int i = 0; i < 11; i++)
