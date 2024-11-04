@@ -33,8 +33,8 @@ int main()
     // 각 심사자의 정보를 콤마로 구분하여 한 줄로 입력받기
     for(int i = 0; i < judge_num; i++)
     {
-        char name[50], gender[10], company[50], position[50];
-        char expertise[50], email[50], phone[20];
+        char name[70], gender[30], company[70], position[70];
+        char expertise[70], email[70], phone[40];
         char input_line[MAX_STRING];
         int valid_input = 0;
         
@@ -78,8 +78,8 @@ int main()
         for(int i = 0; i < judge_num; i++)
         {
             printf("\n[심사자 %d]\n", i+1);
-            char name[50], gender[10], company[50], position[50];
-            char expertise[50], email[50], phone[20];
+            char name[70], gender[30], company[70], position[70];
+            char expertise[70], email[70], phone[40];
             
             // JSON 문자열에서 각 필드의 값을 추출
             sscanf(judges_array[i], 
@@ -87,13 +87,13 @@ int main()
                 "\"position\":\"%[^\"]\",\"expertise\":\"%[^\"]\",\"email\":\"%[^\"]\",\"phone\":\"%[^\"]\"}",
                 name, gender, company, position, expertise, email, phone);
             
-            printf("이름: %s\n", name);
-            printf("성별: %s\n", gender);
-            printf("소속: %s\n", company);
-            printf("직함: %s\n", position);
-            printf("전문분야: %s\n", expertise);
-            printf("이메일: %s\n", email);
-            printf("전화번호: %s\n", phone);
+            printf("%s\n", name);
+            printf("%s\n", gender);
+            printf("%s\n", company);
+            printf("%s\n", position);
+            printf("%s\n", expertise);
+            printf("%s\n", email);
+            printf("%s\n", phone);
             printf("----------------------------------\n");
         }
     }
