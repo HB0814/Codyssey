@@ -83,7 +83,7 @@ int main()
     // 각 후보자의 ID를 scoring_sheet에 저장
     for(int i = 0; i < MAX_CANDIDATE; i++) {
         int base_idx = i * 7;
-        // candidates 배열의 후반부(i + MAX_CANDIDATE)에서 ID를 가져와 정수로 변환
+        // candidates 배열의 초반부(i + MAX_CANDIDATE)에서 ID를 가져와 정수로 변환
         scoring_sheet[base_idx] = atoi(candidates[i + MAX_CANDIDATE]);
     }
 
