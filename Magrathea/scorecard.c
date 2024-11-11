@@ -51,7 +51,7 @@ int main()
         for(int i=0;i<MAX_CANDIDATE;i++)
         {
             int base_idx = i * 7;
-            printf("%s,%d\n",candidates[i],scoring_sheet[base_idx + judge_num]);
+            printf("%s:%d\n",candidates[i],scoring_sheet[base_idx + judge_num]);
         }
         printf("제출하시겠습니까? (y/n): "); 
         getchar();  // 버퍼 비우기
