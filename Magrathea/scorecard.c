@@ -41,7 +41,7 @@ int main()
                     printf("잘못된 점수입니다. 10-100 사이의 점수를 입력해주세요.\n");
                 }
             } while(score < 10 || score > 100);
-            scoring_sheet[base_idx + judge_num] = score;
+            scoring_sheet[base_idx + judge_num+1] = score;
             printf("------------------------------------\n");
         }
         printf("++++++++++++++++++++++++++++++++++++\n");
@@ -51,7 +51,7 @@ int main()
         for(int i=0;i<MAX_CANDIDATE;i++)
         {
             int base_idx = i * 7;
-            printf("%s:%d\n",candidates[i],scoring_sheet[base_idx + judge_num]);
+            printf("%s:%d\n",candidates[i],scoring_sheet[base_idx + judge_num+1]);
         }
         printf("제출하시겠습니까? (y/n): "); 
         getchar();  // 버퍼 비우기
@@ -84,7 +84,7 @@ int main()
     for(int i = 0; i < MAX_CANDIDATE; i++) {
         int base_idx = i * 7;
         // candidates 배열의 초반부(i + MAX_CANDIDATE)에서 ID를 가져와 정수로 변환
-        scoring_sheet[base_idx] = atoi(candidates[i + MAX_CANDIDATE]);
+        scoring_sheet[base_idx] = atoi(candidates[i + MAX_CANDIDATE+1]);
     }
 
     // 후보자 인덱스 배열 생성
