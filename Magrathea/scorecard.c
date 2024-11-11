@@ -6,7 +6,10 @@
 
 char *judge_names[] = {"김영수","이지영","박민준","송현우","박지영"};
 char *judge_specialities[] = {"음악","댄스","보컬","비주얼","음악평론"};
-char *candidate_names[] = {"박지연","Ethan Smith","Suphanan Wong","Helena Silva","Karolina Nowak","Liam Wilson"};
+char *candidates[] = {
+    "박지연", "Ethan Smith", "Suphanan Wong", "Helena Silva", "Karolina Nowak", "Liam Wilson",
+    "100001", "100002", "100003", "100004", "100005", "100006"
+};
 int scoring_sheet[MAX_CANDIDATE * 7]; // 총 42개 요소 (6명 * 7항목)
 
 int main() 
@@ -29,7 +32,7 @@ int main()
             // 100000-999999 사이의 랜덤 6자리 숫자 생성
             scoring_sheet[base_idx] = 100000 + (rand() % 900000);
             
-            printf("후보자: %s\n", candidate_names[i]);
+            printf("후보자: %s\n", candidates[i]);
             int score;
             do {
                 printf("%s (10-100점): ", judge_specialities[judge_num]);
@@ -48,7 +51,7 @@ int main()
         for(int i=0;i<MAX_CANDIDATE;i++)
         {
             int base_idx = i * 7;
-            printf("%s,%d\n",candidate_names[i],scoring_sheet[base_idx + judge_num]);
+            printf("%s,%d\n",candidates[i],scoring_sheet[base_idx + judge_num]);
         }
         printf("제출하시겠습니까? (y/n): "); 
         getchar();  // 버퍼 비우기
@@ -75,6 +78,13 @@ int main()
         {
             scoring_sheet[base_idx + 6] += scoring_sheet[base_idx + j];
         }
+    }
+
+    // 각 후보자의 ID를 scoring_sheet에 저장
+    for(int i = 0; i < MAX_CANDIDATE; i++) {
+        int base_idx = i * 7;
+        // candidates 배열의 후반부(i + MAX_CANDIDATE)에서 ID를 가져와 정수로 변환
+        scoring_sheet[base_idx] = atoi(candidates[i + MAX_CANDIDATE]);
     }
 
     // 후보자 인덱스 배열 생성
@@ -107,7 +117,7 @@ int main()
     // 상위 4명 출력
     for(int i = 0; i < 4; i++) {
         int idx = candidate_indices[i];
-        printf("%d. %s\n",i+1,candidate_names[idx]);
+        printf("%d. %s\n",i+1,candidates[idx]);
     }
     
     return 0;
